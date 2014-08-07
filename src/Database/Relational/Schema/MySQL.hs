@@ -28,6 +28,7 @@ import Database.Relational.Query        ( Query
                                         , placeholder
                                         , asc
                                         , value
+                                        , distinct
                                         )
 import Database.Relational.Query.Type   (relationalQuery)
 
@@ -95,6 +96,8 @@ primaryKeyQuerySQL :: Query (String, String) String
 primaryKeyQuerySQL = relationalQuery primaryKeyRelation
     where
         primaryKeyRelation = relation' $ do
+            distinct
+
             cons <- query tableConstraints
             key  <- query keyColumnUsage
 
