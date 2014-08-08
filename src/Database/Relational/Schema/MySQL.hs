@@ -60,6 +60,7 @@ mapFromSqlDefault = fromList
     , ("INT",        [t| Int32 |])
     , ("INTEGER",    [t| Int32 |])
     , ("BIGINT",     [t| Int64 |])
+    , ("BIT",        [t| Int32 |])
     ]
 
 normalizeColumn :: String -> String
